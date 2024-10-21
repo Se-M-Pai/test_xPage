@@ -1,6 +1,7 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:test_xpage/navigation/navigation_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,6 +47,7 @@ class TestPageWidget extends ElementaryWidget<TestPageWidgetModel> {
             ],
           ),
         ),
+        bottomNavigationBar: NavigationWidget(),
         floatingActionButton: ValueListenableBuilder<bool>(
           valueListenable: wm.calculatingState,
           builder: (final _, final bool isCalculating, final __) => isCalculating
