@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(final BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          useMaterial3: true,
           fontFamily: 'GothamPro',
+          listTileTheme: ListTileThemeData(
+            contentPadding: const EdgeInsets.all(0),
+          ),
         ),
         title: 'Test',
         home: const NavigationWidget(),

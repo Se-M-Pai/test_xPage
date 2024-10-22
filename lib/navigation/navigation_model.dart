@@ -1,8 +1,8 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:test_xpage/ui/catalog.dart';
-import 'package:test_xpage/ui/empty.dart';
-import 'package:test_xpage/ui/home.dart';
+import 'package:test_xpage/core/ui/catalog.dart';
+import 'package:test_xpage/core/ui/empty.dart';
+import 'package:test_xpage/core/ui/home.dart';
 
 /// Модель нижней панели экранов
 class NavigationModel extends ElementaryModel {

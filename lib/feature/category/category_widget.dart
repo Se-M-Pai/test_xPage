@@ -25,7 +25,6 @@ class CategoryWidget extends ElementaryWidget<CategoryWidgetModel> {
                 builder: (final _, final List<CategoryExample> listCategory, final __) => SizedBox(
                   height: listCategory.length * 87,
                   child: ListView.separated(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
                     itemCount: listCategory.length,
                     physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (final _, final int index) => CategoryCard(
