@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   elementary_cli: ^2.0.0
   elementary: ^3.1.1
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -24,6 +25,21 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  fonts:
+    - family: GothamPro
+      fonts:
+        - asset: assets/fonts/gothampro_light.ttf
+          weight: 300
+        - asset: assets/fonts/gothampro_regular.ttf
+          weight: 400
+        - asset: assets/fonts/gothampro_medium.ttf
+          weight: 500
+        - asset: assets/fonts/gothampro_bold.ttf
+          weight: 700
+        - asset: assets/fonts/gothampro_black.ttf
+          weight: 900
+
   assets:
     - assets/
     - assets/navigation/
+    - assets/category/

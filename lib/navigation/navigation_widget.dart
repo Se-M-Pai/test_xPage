@@ -1,5 +1,8 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:test_xpage/core/app_icons.dart';
+import 'package:test_xpage/core/app_text_style.dart';
 import 'package:test_xpage/navigation/navigation_wm.dart';
 
 class NavigationWidget extends ElementaryWidget<NavigationWidgetModel> {
@@ -8,76 +11,51 @@ class NavigationWidget extends ElementaryWidget<NavigationWidgetModel> {
     final WidgetModelFactory wmFactory = navigationWidgetModelFactory,
   }) : super(wmFactory, key: key);
 
-  static const Color _selectedColor = Color(0xFFACC800);
-  static const Color _unselectedColor = Color(0xFF211901);
-
   @override
   Widget build(final NavigationWidgetModel wm) => ValueListenableBuilder<int>(
         valueListenable: wm.indexState,
-        builder: (final _, final int index, final __) => BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/navigation/home.png',
-                color: _unselectedColor,
-              ),
-              activeIcon: Image.asset(
-                'assets/navigation/home.png',
-                color: _selectedColor,
-              ),
-              label: 'Главная',
+        builder: (final _, final int index, final __) => Scaffold(
+          body: ValueListenableBuilder<Widget>(
+            valueListenable: wm.screenState,
+            builder: (final _, final Widget screen, final __) => SafeArea(
+              child: screen,
             ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/navigation/catalog.png',
-                color: _unselectedColor,
-              ),
-              activeIcon: Image.asset(
-                'assets/navigation/catalog.png',
-                color: _selectedColor,
-              ),
-              label: 'Каталог',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/navigation/profile.png',
-                color: _unselectedColor,
-              ),
-              activeIcon: Image.asset(
-                'assets/navigation/profile.png',
-                color: _selectedColor,
-              ),
-              label: 'Профиль',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/navigation/favorite.png',
-                color: _unselectedColor,
-              ),
-              activeIcon: Image.asset(
-                'assets/navigation/favorite.png',
-                color: _selectedColor,
-              ),
-              label: 'Избранное',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/navigation/shop.png',
-                color: _unselectedColor,
-              ),
-              activeIcon: Image.asset(
-                'assets/navigation/shop.png',
-                color: _selectedColor,
-              ),
-              label: 'Магазины',
-            ),
-          ],
-          currentIndex: index,
-          backgroundColor: Color(0xFFF8F8F8),
-          selectedItemColor: _selectedColor,
-          unselectedItemColor: _unselectedColor,
-          showUnselectedLabels: true,
-          onTap: wm.switchScreen,
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            items: <BottomNavigationBarItem>[
+              _navigationItem('Главная', AppIcons.home),
+              _navigationItem('Каталог', AppIcons.catalog),
+              _navigationItem('Профиль', AppIcons.profile),
+              _navigationItem('Избранное', AppIcons.favorite),
+              _navigationItem('Магазины', AppIcons.shop),
+            ],
+            currentIndex: index,
+            unselectedLabelStyle: AppTextStyle.navigation,
+            selectedLabelStyle: AppTextStyle.navigation,
+            backgroundColor: Color(0xFFF8F8F8),
+            selectedItemColor: Color(0xFFACC800),
+            unselectedItemColor: Color(0xFF211901),
+            showUnselectedLabels: true,
+            onTap: wm.switchScreen,
+          ),
         ),
       );
 }
+
+/// Элементы навигационной панели
+///
+/// [name] - название экрана
+///
+/// [icon] - иконка экрана
+
+BottomNavigationBarItem _navigationItem(final String name, final String icon) => BottomNavigationBarItem(
+      icon: SvgPicture.asset(
+        icon,
+        colorFilter: ColorFilter.mode(Color(0xFF211901), BlendMode.srcIn),
+      ),
+      activeIcon: SvgPicture.asset(
+        icon,
+        colorFilter: ColorFilter.mode(Color(0xFFACC800), BlendMode.srcIn),
+      ),
+      label: name,
+    );
