@@ -5,6 +5,7 @@ import 'package:test_xpage/core/ui/empty.dart';
 import 'package:test_xpage/core/ui/home.dart';
 
 /// Модель нижней панели экранов
+
 class NavigationModel extends ElementaryModel {
   NavigationModel();
 
@@ -20,5 +21,5 @@ class NavigationModel extends ElementaryModel {
   int get indexScreen => _indexScreen;
   Widget get screen => _screen.elementAt(_indexScreen);
 
-  Future<int> switchScreen(final int index) async => _indexScreen = index;
+  int switchScreen(final int index) => _indexScreen = index;
 }

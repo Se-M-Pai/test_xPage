@@ -1,11 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:test_xpage/core/app_icons.dart';
 import 'package:test_xpage/core/app_text_style.dart';
 import 'package:test_xpage/core/widgets/product_search.dart';
 import 'package:test_xpage/feature/category/category_widget.dart';
-import 'package:test_xpage/feature/category/widget/category_card.dart';
+import 'package:test_xpage/feature/delivery/delivery_widget.dart';
 
 /// Главный экран
 class Home extends StatelessWidget {
@@ -15,63 +14,60 @@ class Home extends StatelessWidget {
   Widget build(final BuildContext context) => Column(
         children: <Widget>[
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    // Доставка и корзина
-                    SizedBox(
-                      height: 92,
-                      child: Row(
-                        children: <Widget>[],
-                      ),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  // Доставка и корзина
+                  const DeliveryWidget(),
+
+                  // Поиск по товарам
+                  const ProductSearch(),
+
+                  // Акции
+                  ListTile(
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 24),
+                    title: Text(
+                      'Акции',
+                      style: AppTextStyle.title,
                     ),
+                  ),
 
-                    // Поиск по товарам
-                    const ProductSearch(),
-
-                    // Акции
-                    ListTile(
-                      title: Text(
-                        'Акции',
-                        style: AppTextStyle.title,
-                      ),
+                  // Популярное
+                  ListTile(
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 24),
+                    title: Text(
+                      'Популярное',
+                      style: AppTextStyle.title,
                     ),
-
-                    // Популярное
-                    ListTile(
-                      title: Text(
-                        'Популярное',
-                        style: AppTextStyle.title,
+                    trailing: TextButton.icon(
+                      onPressed: () {
+                        log('Смотреть все популярное');
+                      },
+                      style: ButtonStyle(
+                        padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.zero),
                       ),
-                      trailing: TextButton(
-                        onPressed: () {
-                          log('Смотреть все популярное');
-                        },
-                        style: ButtonStyle(
-                          padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.all(0)),
-                        ),
-                        child: Text(
-                          'Смотреть все >',
-                          style: AppTextStyle.button,
-                        ),
+                      label: Text(
+                        'Смотреть все',
+                        style: AppTextStyle.seeAll,
                       ),
+                      iconAlignment: IconAlignment.end,
+                      icon: Icon(Icons.keyboard_arrow_right, color: Color(0xFFFF8B19)),
                     ),
+                  ),
 
-                    // Категории товаров
-                    ListTile(
-                      title: Text(
-                        'Категории товаров',
-                        style: AppTextStyle.title,
-                      ),
+                  // Категории товаров
+                  ListTile(
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 24),
+                    title: Text(
+                      'Категории товаров',
+                      style: AppTextStyle.title,
                     ),
+                  ),
 
-                    // Список категорий
-                    const CategoryWidget(),
-                  ],
-                ),
+                  // Список категорий
+                  const CategoryWidget(),
+                ],
               ),
             ),
           ),

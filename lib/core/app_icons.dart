@@ -7,4 +7,7 @@ class AppIcons {
   static const String profile = 'assets/navigation/profile.svg';
   static const String favorite = 'assets/navigation/favorite.svg';
   static const String shop = 'assets/navigation/shop.svg';
+
+  static const String dollar = 'assets/dollar.svg';
+  static const String edit = 'assets/edit.svg';
 }

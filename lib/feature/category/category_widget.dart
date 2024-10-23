@@ -1,7 +1,5 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:test_xpage/core/app_icons.dart';
 import 'package:test_xpage/feature/category/category_model.dart';
 import 'package:test_xpage/feature/category/category_wm.dart';
 import 'package:test_xpage/feature/category/widget/category_card.dart';
@@ -22,7 +20,8 @@ class CategoryWidget extends ElementaryWidget<CategoryWidgetModel> {
               )
             : ValueListenableBuilder<List<CategoryExample>>(
                 valueListenable: wm.categoryState,
-                builder: (final _, final List<CategoryExample> listCategory, final __) => SizedBox(
+                builder: (final _, final List<CategoryExample> listCategory, final __) => Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   height: listCategory.length * 87,
                   child: ListView.separated(
                     itemCount: listCategory.length,

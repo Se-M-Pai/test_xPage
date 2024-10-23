@@ -11,8 +11,10 @@ class ProductSearch extends StatelessWidget {
   }
 
   @override
-  Widget build(final BuildContext context) => SizedBox(
+  Widget build(final BuildContext context) => Container(
         height: 44,
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        margin: const EdgeInsets.symmetric(vertical: 24),
         child: TextFormField(
           decoration: InputDecoration(
             prefixIcon: Icon(
@@ -20,9 +22,11 @@ class ProductSearch extends StatelessWidget {
               size: 16,
               color: Color(0xFF211901),
             ),
-            contentPadding: const EdgeInsets.all(0),
+            contentPadding: EdgeInsets.zero,
             hintText: 'Поиск по товарам',
-            border: OutlineInputBorder(
+            hintStyle: TextStyle(fontSize: 16, color: Color(0xFFC3C3C3)),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFFD9D9D9)),
               borderRadius: BorderRadius.all(Radius.circular(30)),
             ),
           ),

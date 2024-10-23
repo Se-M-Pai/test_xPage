@@ -11,7 +11,7 @@ NavigationWidgetModel navigationWidgetModelFactory(final BuildContext context) =
 ///
 /// [indexState] - Индекс экрана
 ///
-/// [screenState] -
+/// [screenState] - Экран
 
 class NavigationWidgetModel extends WidgetModel<NavigationWidget, NavigationModel> {
   NavigationWidgetModel(super._model);
@@ -23,9 +23,8 @@ class NavigationWidgetModel extends WidgetModel<NavigationWidget, NavigationMode
   ValueListenable<Widget> get screenState => _screenController;
 
   /// Переключение экранов
-  Future<void> switchScreen(final int index) async {
-    final int newIndex = await model.switchScreen(index);
-    _indexController.value = newIndex;
+  void switchScreen(final int index) {
+    _indexController.value = model.switchScreen(index);
     _screenController.value = model.screen;
   }
 

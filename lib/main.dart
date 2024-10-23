@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           fontFamily: 'GothamPro',
           listTileTheme: ListTileThemeData(
-            contentPadding: const EdgeInsets.all(0),
+            contentPadding: EdgeInsets.zero,
           ),
         ),
         title: 'Test',

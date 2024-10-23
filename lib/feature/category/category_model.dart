@@ -1,14 +1,12 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:test_xpage/core/ui/catalog.dart';
-import 'package:test_xpage/core/ui/empty.dart';
-import 'package:test_xpage/core/ui/home.dart';
 
 /// Модель категорий
+
 class CategoryModel extends ElementaryModel {
   CategoryModel();
 
-  final List<CategoryExample> _listCategory = CategoryExample.values;
+  List<CategoryExample> _listCategory = CategoryExample.values;
   List<CategoryExample> get listCategory => _listCategory;
 
   Future<List<CategoryExample>> searchCategory() async {

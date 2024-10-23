@@ -28,16 +28,7 @@ flutter:
   fonts:
     - family: GothamPro
       fonts:
-        - asset: assets/fonts/gothampro_light.ttf
-          weight: 300
         - asset: assets/fonts/gothampro_regular.ttf
-          weight: 400
-        - asset: assets/fonts/gothampro_medium.ttf
-          weight: 500
-        - asset: assets/fonts/gothampro_bold.ttf
-          weight: 700
-        - asset: assets/fonts/gothampro_black.ttf
-          weight: 900
 
   assets:
     - assets/
