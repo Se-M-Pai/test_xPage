@@ -1,5 +1,5 @@
 import 'package:elementary/elementary.dart';
-import 'package:flutter/material.dart';
+import 'package:test_xpage/example_data/example_category.dart';
 
 /// Модель категорий
 
@@ -15,47 +15,4 @@ class CategoryModel extends ElementaryModel {
 
     return _listCategory;
   }
-}
-
-/// Пример категорий
-enum CategoryExample {
-  vegetables,
-  fruits,
-  driedFruits,
-  nuts,
-  sweets,
-  beverages,
-  nutPastes,
-  honey,
-  jam,
-  freezing,
-  cereals;
-
-  AssetImage get image => switch (this) {
-        vegetables => AssetImage('assets/category/vegetables.png'),
-        fruits => AssetImage('assets/category/fruits.png'),
-        driedFruits => AssetImage('assets/category/driedFruits.png'),
-        nuts => AssetImage('assets/category/nuts.png'),
-        sweets => AssetImage('assets/category/sweets.png'),
-        beverages => AssetImage('assets/category/beverages.png'),
-        nutPastes => AssetImage('assets/category/nutPastes.png'),
-        honey => AssetImage('assets/category/honey.png'),
-        jam => AssetImage('assets/category/jam.png'),
-        freezing => AssetImage('assets/category/freezing.png'),
-        cereals => AssetImage('assets/category/cereals.png'),
-      };
-
-  String get label => switch (this) {
-        vegetables => 'Овощи и зелень',
-        fruits => 'Фрукты и ягоды',
-        driedFruits => 'Сухофрукты',
-        nuts => 'Орехи и семечки',
-        sweets => 'Сладости',
-        beverages => 'Напитки',
-        nutPastes => 'Ореховые пасты\nи урбечи',
-        honey => 'Мед и крем-мед',
-        jam => 'Варенье',
-        freezing => 'Заморозка',
-        cereals => 'Крупы',
-      };
 }

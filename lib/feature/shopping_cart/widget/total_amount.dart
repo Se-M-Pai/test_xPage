@@ -15,7 +15,7 @@ class TotalAmount extends StatelessWidget {
     super.key,
   });
 
-  final double total;
+  final int total;
 
   @override
   Widget build(final BuildContext context) => FilledButton.icon(
@@ -28,7 +28,7 @@ class TotalAmount extends StatelessWidget {
           backgroundColor: WidgetStateProperty.all<Color>(Color(0xFFFF8B19)),
         ),
         label: Text(
-          total.toStringAsFixed(0),
+          total.toString(),
           style: AppTextStyle.white14,
         ),
         icon: SvgPicture.asset(

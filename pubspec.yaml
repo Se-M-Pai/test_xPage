@@ -34,3 +34,5 @@ flutter:
     - assets/
     - assets/navigation/
     - assets/category/
+    - assets/category/icons/
+    - assets/products/

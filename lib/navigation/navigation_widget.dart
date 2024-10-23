@@ -15,6 +15,7 @@ class NavigationWidget extends ElementaryWidget<NavigationWidgetModel> {
   Widget build(final NavigationWidgetModel wm) => ValueListenableBuilder<int>(
         valueListenable: wm.indexState,
         builder: (final _, final int index, final __) => Scaffold(
+          backgroundColor: Colors.white,
           body: ValueListenableBuilder<Widget>(
             valueListenable: wm.screenState,
             builder: (final _, final Widget screen, final __) => SafeArea(
@@ -37,6 +38,7 @@ class NavigationWidget extends ElementaryWidget<NavigationWidgetModel> {
             unselectedItemColor: Color(0xFF211901),
             showUnselectedLabels: true,
             onTap: wm.switchScreen,
+            type: BottomNavigationBarType.fixed,
           ),
         ),
       );

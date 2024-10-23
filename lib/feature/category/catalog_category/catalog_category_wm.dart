@@ -2,13 +2,13 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:test_xpage/example_data/example_category.dart';
+import 'package:test_xpage/feature/category/catalog_category/catalog_category_widget.dart';
 import 'package:test_xpage/feature/category/category_model.dart';
-import 'package:test_xpage/feature/category/category_widget.dart';
 
-CategoryWM categoryWMFactory(final BuildContext context) => CategoryWM(CategoryModel());
+CatalogCategoryWm catalogCategoryWMFactory(final BuildContext context) => CatalogCategoryWm(CategoryModel());
 
-class CategoryWM extends WidgetModel<CategoryWidget, CategoryModel> {
-  CategoryWM(super._model);
+class CatalogCategoryWm extends WidgetModel<CatalogCategoryWidget, CategoryModel> {
+  CatalogCategoryWm(super._model);
 
   late ValueNotifier<int> _countController;
   late ValueNotifier<List<CategoryExample>> _categoryController;

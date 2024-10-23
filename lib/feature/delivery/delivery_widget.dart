@@ -99,7 +99,7 @@ class DeliveryWidget extends ElementaryWidget<DeliveryWidgetModel> {
                           )
                         : SizedBox(),
                     TotalAmount(
-                      total: 12345.56,
+                      total: 38,
                     ),
                   ],
                 ),
