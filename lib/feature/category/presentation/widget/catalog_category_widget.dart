@@ -21,46 +21,35 @@ class CatalogCategoryWidget extends ElementaryWidget<CatalogCategoryWm> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
-                  children: listCategory
-                      .take(7)
-                      .map(
-                        (final CategoryExample element) => Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: selectedCategory == element
-                              ? OutlinedButton.icon(
-                                  onPressed: () {
-                                    wm.onTap(element);
-                                  },
-                                  style: ButtonStyle(
-                                    backgroundColor: WidgetStateProperty.all<Color>(Color(0xFFFF8B19)),
-                                    side: WidgetStateProperty.all<BorderSide>(BorderSide(color: Color(0xFFFF8B19))),
-                                  ),
-                                  label: Text(element.label, style: AppTextStyle.white14l),
-                                  icon: SvgPicture.asset(
-                                    element.icon,
-                                    width: 16,
-                                    height: 16,
-                                    colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                                  ),
-                                )
-                              : OutlinedButton.icon(
-                                  onPressed: () {
-                                    wm.onTap(element);
-                                  },
-                                  style: ButtonStyle(
-                                    side: WidgetStateProperty.all<BorderSide>(BorderSide(color: Color(0xFFFF8B19))),
-                                  ),
-                                  label: Text(element.label, style: AppTextStyle.black14l),
-                                  icon: SvgPicture.asset(
-                                    element.icon,
-                                    width: 16,
-                                    height: 16,
-                                    colorFilter: ColorFilter.mode(Color(0xFFACC800), BlendMode.srcIn),
-                                  ),
-                                ),
+                  children: listCategory.take(7).map(
+                    (final CategoryExample category) {
+                      final bool selected = selectedCategory == category;
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: ChoiceChip(
+                          selected: selected,
+                          label: Text(category.label),
+                          labelStyle: selected ? AppTextStyle.white14l : AppTextStyle.black14l,
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Color(0xFFFF8B19)),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          selectedColor: Color(0xFFFF8B19),
+                          backgroundColor: Colors.white,
+                          avatar: SvgPicture.asset(
+                            category.icon,
+                            width: 16,
+                            height: 16,
+                            colorFilter: ColorFilter.mode(selected ? Colors.white : Color(0xFFACC800), BlendMode.srcIn),
+                          ),
+                          showCheckmark: false,
+                          onSelected: (final _) {
+                            wm.onTap(category);
+                          },
                         ),
-                      )
-                      .toList(),
+                      );
+                    },
+                  ).toList(),
                 ),
               ),
               const SizedBox(height: 24),
