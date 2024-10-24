@@ -1,38 +1,48 @@
+import 'dart:developer';
+
 import 'package:elementary/elementary.dart';
+import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:test_xpage/feature/delivery/delivery_model.dart';
 import 'package:test_xpage/feature/delivery/delivery_widget.dart';
 
-DeliveryWidgetModel deliveryWidgetModelFactory(final BuildContext context) => DeliveryWidgetModel(DeliveryModel());
+abstract interface class IDeliveryWM implements IWidgetModel {
+  // Режим доставка/самовывоз
+  EntityValueListenable<DeliveryState> get deliveryState;
+
+  // Переключение режима доставки
+  void change(final DeliveryState state);
+}
+
+DeliveryWM deliveryWMFactory(final BuildContext context) => DeliveryWM(DeliveryModel());
 
 /// Блок выбора доставки / самовывоза
-///
-/// [deliveryState] - Выбранный вариант доставки
 
-class DeliveryWidgetModel extends WidgetModel<DeliveryWidget, DeliveryModel> {
-  DeliveryWidgetModel(super._model);
+class DeliveryWM extends WidgetModel<DeliveryWidget, DeliveryModel> implements IDeliveryWM {
+  DeliveryWM(super._model);
 
-  late ValueNotifier<DeliveryState> _deliveryController;
+  late EntityStateNotifier<DeliveryState> _deliveryController;
 
-  ValueListenable<DeliveryState> get deliveryState => _deliveryController;
+  @override
+  EntityValueListenable<DeliveryState> get deliveryState => _deliveryController;
 
-  /// Переключение режима доставки / самовывоз
+  @override
   void change(final DeliveryState state) {
     _deliveryController.value = model.change(state);
   }
 
   @override
   void initWidgetModel() {
-    super.initWidgetModel();
+    _deliveryController = EntityStateNotifier<DeliveryState>(EntityState<DeliveryState>.content(model.deliveryState));
 
-    _deliveryController = ValueNotifier<DeliveryState>(model.deliveryState);
+    super.initWidgetModel();
   }
 
   @override
   void dispose() {
-    _deliveryController.dispose();
-
     super.dispose();
+
+    _deliveryController.dispose();
   }
 }

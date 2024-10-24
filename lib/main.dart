@@ -1,7 +1,7 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:test_xpage/navigation/navigation_widget.dart';
+import 'package:test_xpage/feature/navigation/navigation_widget.dart';
 
 void main() {
   runApp(const MyApp());

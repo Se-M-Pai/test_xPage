@@ -1,4 +1,3 @@
-import 'package:test_xpage/core/app_icons.dart';
 import 'package:test_xpage/core/product.dart';
 import 'package:test_xpage/example_data/example_category.dart';
 

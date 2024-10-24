@@ -1,35 +1,37 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:test_xpage/core/app_text_style.dart';
+import 'package:test_xpage/core/theme/text_style.dart';
+import 'package:test_xpage/example_data/example_category.dart';
+import 'package:test_xpage/feature/category/presentation/category_wm.dart';
 
 /// Карточка категории
 ///
-/// [label] - Название категории
+/// [wm] - Представление категорий
 ///
-/// [image] - Изображение категории
+/// [category] - Категория
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
-    required this.label,
-    required this.image,
+    required this.wm,
+    required this.category,
     super.key,
   });
 
-  final String label;
-  final AssetImage image;
+  final CategoryWM wm;
+  final CategoryExample category;
 
   @override
   Widget build(final BuildContext context) => InkWell(
         onTap: () {
+          wm.onTap(category);
           // TODO клик по карточке открывает каталог с выбранной категорией
-          log(label);
         },
         child: Container(
           height: 72,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: image,
+              image: category.image,
               fit: BoxFit.cover,
             ),
           ),
@@ -37,7 +39,7 @@ class CategoryCard extends StatelessWidget {
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.only(left: 16),
             child: Text(
-              label,
+              category.label,
               style: AppTextStyle.category,
             ),
           ),

@@ -1,14 +1,14 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:test_xpage/core/app_text_style.dart';
+import 'package:test_xpage/core/theme/text_style.dart';
 import 'package:test_xpage/core/widgets/product_search.dart';
-import 'package:test_xpage/feature/category/category_widget.dart';
+import 'package:test_xpage/feature/category/presentation/widget/category_widget.dart';
 import 'package:test_xpage/feature/delivery/delivery_widget.dart';
 
 /// Главный экран
-class Home extends StatelessWidget {
-  const Home({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(final BuildContext context) => Column(

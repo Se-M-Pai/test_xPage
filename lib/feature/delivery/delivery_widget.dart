@@ -1,31 +1,29 @@
 import 'dart:developer';
 
 import 'package:elementary/elementary.dart';
+import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:test_xpage/core/app_icons.dart';
-import 'package:test_xpage/core/app_text_style.dart';
+import 'package:test_xpage/core/theme/icons.dart';
+import 'package:test_xpage/core/theme/text_style.dart';
 import 'package:test_xpage/feature/delivery/delivery_model.dart';
 import 'package:test_xpage/feature/delivery/delivery_wm.dart';
 import 'package:test_xpage/feature/shopping_cart/widget/total_amount.dart';
 
-class DeliveryWidget extends ElementaryWidget<DeliveryWidgetModel> {
-  const DeliveryWidget({
-    final Key? key,
-    final WidgetModelFactory wmFactory = deliveryWidgetModelFactory,
-  }) : super(wmFactory, key: key);
+class DeliveryWidget extends ElementaryWidget<DeliveryWM> {
+  const DeliveryWidget({super.key}) : super(deliveryWMFactory);
 
   @override
-  Widget build(final DeliveryWidgetModel wm) => ValueListenableBuilder<DeliveryState>(
-        valueListenable: wm.deliveryState,
-        builder: (final BuildContext context, final DeliveryState state, final __) => SizedBox(
+  Widget build(final DeliveryWM wm) => EntityStateNotifierBuilder<DeliveryState>(
+        listenableEntityState: wm.deliveryState,
+        builder: (final BuildContext context, final DeliveryState? state) => SizedBox(
           height: 92,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               SizedBox(
                 height: 36,
-                child: state == DeliveryState.delivery
+                child: state != DeliveryState.selfDelivery
                     ? Row(
                         children: <Widget>[
                           Container(

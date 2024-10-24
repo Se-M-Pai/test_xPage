@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:test_xpage/core/app_icons.dart';
-import 'package:test_xpage/core/app_text_style.dart';
 import 'package:test_xpage/core/product.dart';
+import 'package:test_xpage/core/theme/icons.dart';
+import 'package:test_xpage/core/theme/text_style.dart';
 
 /// Настраиваемый виджет карточки для отображения информации о продукте
 
@@ -15,13 +15,16 @@ class ProductCard extends StatelessWidget {
   Widget build(final BuildContext context) => Container(
         height: 270,
         width: 156,
-        decoration: BoxDecoration(color: Colors.white, boxShadow: <BoxShadow>[
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.25),
-            spreadRadius: 1,
-            blurRadius: 5,
-          )
-        ]),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.25),
+              spreadRadius: 1,
+              blurRadius: 5,
+            )
+          ],
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

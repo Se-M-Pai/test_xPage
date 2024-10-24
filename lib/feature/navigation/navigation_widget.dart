@@ -1,18 +1,15 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:test_xpage/core/app_icons.dart';
-import 'package:test_xpage/core/app_text_style.dart';
-import 'package:test_xpage/navigation/navigation_wm.dart';
+import 'package:test_xpage/core/theme/icons.dart';
+import 'package:test_xpage/core/theme/text_style.dart';
+import 'package:test_xpage/feature/navigation/navigation_wm.dart';
 
-class NavigationWidget extends ElementaryWidget<NavigationWidgetModel> {
-  const NavigationWidget({
-    final Key? key,
-    final WidgetModelFactory wmFactory = navigationWidgetModelFactory,
-  }) : super(wmFactory, key: key);
+class NavigationWidget extends ElementaryWidget<INavigationBarWM> {
+  const NavigationWidget({super.key}) : super(navigationBarWMFactory);
 
   @override
-  Widget build(final NavigationWidgetModel wm) => ValueListenableBuilder<int>(
+  Widget build(final INavigationBarWM wm) => ValueListenableBuilder<int>(
         valueListenable: wm.indexState,
         builder: (final _, final int index, final __) => Scaffold(
           backgroundColor: Colors.white,

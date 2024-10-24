@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:test_xpage/core/app_icons.dart';
-import 'package:test_xpage/core/app_text_style.dart';
+import 'package:test_xpage/core/theme/icons.dart';
+import 'package:test_xpage/core/theme/text_style.dart';
 
 /// Кнопка перехода в корзину с отображением общей суммы
 ///

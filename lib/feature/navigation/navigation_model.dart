@@ -9,17 +9,13 @@ import 'package:test_xpage/core/ui/home.dart';
 class NavigationModel extends ElementaryModel {
   NavigationModel();
 
-  int _indexScreen = 0;
   final List<Widget> _screen = <Widget>[
-    const Home(),
-    const Catalog(),
-    const Empty(data: 'Профиль'),
-    const Empty(data: 'Избранное'),
-    const Empty(data: 'Магазины'),
+    const HomeScreen(),
+    const CatalogScreen(),
+    const EmptyScreen(data: 'Профиль'),
+    const EmptyScreen(data: 'Избранное'),
+    const EmptyScreen(data: 'Магазины'),
   ];
 
-  int get indexScreen => _indexScreen;
-  Widget get screen => _screen.elementAt(_indexScreen);
-
-  int switchScreen(final int index) => _indexScreen = index;
+  List<Widget> get listScreen => _screen;
 }

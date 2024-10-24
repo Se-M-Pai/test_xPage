@@ -1,24 +1,34 @@
+import 'dart:developer';
+
 import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:test_xpage/example_data/example_category.dart';
-import 'package:test_xpage/feature/category/catalog_category/catalog_category_widget.dart';
 import 'package:test_xpage/feature/category/category_model.dart';
+import 'package:test_xpage/feature/category/presentation/category_wm.dart';
+import 'package:test_xpage/feature/category/presentation/widget/catalog_category_widget.dart';
 
 CatalogCategoryWm catalogCategoryWMFactory(final BuildContext context) => CatalogCategoryWm(CategoryModel());
 
-class CatalogCategoryWm extends WidgetModel<CatalogCategoryWidget, CategoryModel> {
+class CatalogCategoryWm extends WidgetModel<CatalogCategoryWidget, CategoryModel> implements ICategoryWM {
   CatalogCategoryWm(super._model);
 
-  late ValueNotifier<int> _countController;
+  late ValueNotifier<CategoryExample> _selectedCategoryController;
+
+  @override
+  ValueListenable<CategoryExample> get selectedCategory => _selectedCategoryController;
+
   late ValueNotifier<List<CategoryExample>> _categoryController;
+
+  @override
+  ValueListenable<List<CategoryExample>> get categoryState => _categoryController;
+
   late final ValueNotifier<bool> _isLoadingController = ValueNotifier<bool>(false);
 
-  ValueListenable<int> get countState => _countController;
-  ValueListenable<List<CategoryExample>> get categoryState => _categoryController;
-  ValueListenable<bool> get isLoadingState => _isLoadingController;
+  @override
+  ValueListenable<bool> get isLoading => _isLoadingController;
 
-  /// Поиск категорий в базе
+  @override
   Future<void> searchCategory() async {
     _isLoadingController.value = true;
 
@@ -28,8 +38,10 @@ class CatalogCategoryWm extends WidgetModel<CatalogCategoryWidget, CategoryModel
     _isLoadingController.value = false;
   }
 
-  Future<void> onTap() async {
-    // TODO Клик по категории на главном
+  @override
+  Future<void> onTap(final CategoryExample category) async {
+    _selectedCategoryController.value = category;
+    model.selectCategory(category);
   }
 
   @override
@@ -38,13 +50,13 @@ class CatalogCategoryWm extends WidgetModel<CatalogCategoryWidget, CategoryModel
 
     searchCategory();
 
-    _countController = ValueNotifier<int>(model.listCategory.length);
+    _selectedCategoryController = ValueNotifier<CategoryExample>(model.selectedCategory);
     _categoryController = ValueNotifier<List<CategoryExample>>(model.listCategory);
   }
 
   @override
   void dispose() {
-    _countController.dispose();
+    _selectedCategoryController.dispose();
     _categoryController.dispose();
 
     super.dispose();
