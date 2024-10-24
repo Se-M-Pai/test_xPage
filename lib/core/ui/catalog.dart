@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_xpage/core/theme/text_style.dart';
 import 'package:test_xpage/core/widgets/product_search.dart';
-import 'package:test_xpage/feature/catalog/catalog_widget.dart';
+import 'package:test_xpage/feature/catalog/widget/catalog_widget.dart';
 import 'package:test_xpage/feature/category/presentation/widget/catalog_category_widget.dart';
 import 'package:test_xpage/feature/delivery/delivery_widget.dart';
 

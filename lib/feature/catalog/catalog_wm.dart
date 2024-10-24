@@ -6,7 +6,7 @@ import 'package:test_xpage/core/global.dart';
 import 'package:test_xpage/core/product.dart';
 import 'package:test_xpage/example_data/example_category.dart';
 import 'package:test_xpage/feature/catalog/catalog_model.dart';
-import 'package:test_xpage/feature/catalog/catalog_widget.dart';
+import 'package:test_xpage/feature/catalog/widget/catalog_widget.dart';
 
 abstract interface class ICatalogWM implements IWidgetModel {
   // Выбранная категория

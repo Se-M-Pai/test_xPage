@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_xpage/core/theme/text_style.dart';
 import 'package:test_xpage/example_data/example_category.dart';
-import 'package:test_xpage/feature/catalog/catalog_widget.dart';
+import 'package:test_xpage/feature/catalog/widget/catalog_widget.dart';
 import 'package:test_xpage/feature/category/presentation/catalog_category_wm.dart';
 
 class CatalogCategoryWidget extends ElementaryWidget<CatalogCategoryWm> {

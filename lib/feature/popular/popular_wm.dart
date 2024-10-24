@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:test_xpage/core/product.dart';
 import 'package:test_xpage/feature/popular/popular_model.dart';
-import 'package:test_xpage/feature/popular/popular_widget.dart';
+import 'package:test_xpage/feature/popular/widget/popular_widget.dart';
 
 abstract interface class IPopularWM implements IWidgetModel {
   // Список популярных продуктов
