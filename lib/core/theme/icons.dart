@@ -15,6 +15,7 @@ class AppIcons {
   static const String emptyHeart = 'assets/emptyHeart.svg';
   static const String fullHeart = 'assets/fullHeart.svg';
   static const String cart = 'assets/cart.svg';
+  static const String more = 'assets/more.svg';
 
   // Иконки категорий
   static const String groceries = 'assets/category/icons/groceries.svg';

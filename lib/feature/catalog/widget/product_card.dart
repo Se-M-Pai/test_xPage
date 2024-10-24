@@ -14,7 +14,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(final BuildContext context) => Container(
         height: 270,
-        width: 156,
+        width: (MediaQuery.of(context).size.width - 64) / 2,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: <BoxShadow>[
@@ -22,7 +22,7 @@ class ProductCard extends StatelessWidget {
               color: Colors.grey.withOpacity(0.25),
               spreadRadius: 1,
               blurRadius: 5,
-            )
+            ),
           ],
         ),
         child: Column(
@@ -33,6 +33,7 @@ class ProductCard extends StatelessWidget {
               children: <Widget>[
                 SizedBox(
                   height: 112,
+                  width: (MediaQuery.of(context).size.width - 64) / 2,
                   child: Image(
                     image: AssetImage(product.image),
                     fit: BoxFit.cover,

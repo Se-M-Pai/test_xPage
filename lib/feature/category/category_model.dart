@@ -14,7 +14,7 @@ class CategoryModel extends ElementaryModel {
   List<CategoryExample> get listCategory => _listCategory;
 
   Future<List<CategoryExample>> searchCategory() async {
-    // TODO Запрос доступных категорий из базы
+    // ToDo Запрос доступных категорий из базы
 
     await Future<void>.delayed(const Duration(seconds: 1)); // Симуляция загрузки категорий
 

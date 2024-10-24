@@ -10,11 +10,11 @@ import 'package:test_xpage/feature/delivery/delivery_model.dart';
 import 'package:test_xpage/feature/delivery/delivery_wm.dart';
 import 'package:test_xpage/feature/shopping_cart/widget/total_amount.dart';
 
-class DeliveryWidget extends ElementaryWidget<DeliveryWM> {
+class DeliveryWidget extends ElementaryWidget<IDeliveryWM> {
   const DeliveryWidget({super.key}) : super(deliveryWMFactory);
 
   @override
-  Widget build(final DeliveryWM wm) => EntityStateNotifierBuilder<DeliveryState>(
+  Widget build(final IDeliveryWM wm) => EntityStateNotifierBuilder<DeliveryState>(
         listenableEntityState: wm.deliveryState,
         builder: (final BuildContext context, final DeliveryState? state) => SizedBox(
           height: 92,

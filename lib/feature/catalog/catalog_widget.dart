@@ -18,10 +18,13 @@ class CatalogWidget extends ElementaryWidget<ICatalogWM> {
           valueListenable: wm.listProduct,
           builder: (final _, final List<Product> listProduct, final __) {
             wm.loadCatalog(selectedCategory);
-            return Wrap(
-              spacing: 16,
-              runSpacing: 16,
-              children: listProduct.map((final Product product) => ProductCard(product: product)).toList(),
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Wrap(
+                spacing: 16,
+                runSpacing: 16,
+                children: listProduct.map((final Product product) => ProductCard(product: product)).toList(),
+              ),
             );
           },
         ),

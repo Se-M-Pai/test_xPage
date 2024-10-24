@@ -5,6 +5,7 @@ import 'package:test_xpage/core/theme/text_style.dart';
 import 'package:test_xpage/core/widgets/product_search.dart';
 import 'package:test_xpage/feature/category/presentation/widget/category_widget.dart';
 import 'package:test_xpage/feature/delivery/delivery_widget.dart';
+import 'package:test_xpage/feature/popular/popular_widget.dart';
 
 /// Главный экран
 class HomeScreen extends StatelessWidget {
@@ -55,6 +56,7 @@ class HomeScreen extends StatelessWidget {
                       icon: Icon(Icons.keyboard_arrow_right, color: Color(0xFFFF8B19)),
                     ),
                   ),
+                  const PopularWidget(),
 
                   // Категории товаров
                   ListTile(
