@@ -21,6 +21,7 @@ List<Product> listProductExample = <Product>[
     category: CategoryExample.fruits,
     rate: 3,
     image: 'assets/products/strawberry.png',
+    isFavorite: true
   ),
   Product(
     name: 'Ананас',

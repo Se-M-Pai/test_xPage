@@ -9,6 +9,8 @@ class AppTextStyle {
   static const TextStyle productName = TextStyle(fontSize: 16, fontWeight: FontWeight.w600);
   static const TextStyle productNameS = TextStyle(fontSize: 12, fontWeight: FontWeight.w600);
   static const TextStyle price = TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Color(0xFFFF8B19));
+  static const TextStyle inCart = TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFFFFFFFF));
+  static const TextStyle sumCart = TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xFFFFFFFF));
   static const TextStyle discountPrice = TextStyle(
       fontSize: 12, fontWeight: FontWeight.w300, color: Color(0xFFD9D9D9), decoration: TextDecoration.lineThrough);
 

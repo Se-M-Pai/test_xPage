@@ -7,6 +7,7 @@ import 'package:test_xpage/feature/category/presentation/widget/category_widget.
 import 'package:test_xpage/feature/delivery/delivery_widget.dart';
 import 'package:test_xpage/feature/popular/widget/popular_widget.dart';
 import 'package:test_xpage/feature/promo/widget/promo_widget.dart';
+import 'package:test_xpage/feature/shopping_cart/widget/cart_button.dart';
 
 /// Главный экран
 class HomeScreen extends StatelessWidget {
@@ -77,11 +78,8 @@ class HomeScreen extends StatelessWidget {
           ),
 
           // Кнопка перехода в корзину
-          // ToDo добавить проверку на наличие товаров в корзине
-          Container(
-            height: 48,
-            color: Color(0xFFACC800),
-          ),
+          // FixMe добавить проверку на наличие товаров в корзине
+          const CartButton(),
         ],
       );
 }

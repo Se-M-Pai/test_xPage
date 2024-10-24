@@ -11,6 +11,8 @@ class Product {
     required this.category,
     required this.rate,
     required this.image,
+    this.isFavorite = false,
+    this.inCart = false,
   });
 
   // Название
@@ -35,8 +37,8 @@ class Product {
   String image;
 
   // В избранном
-  bool isFavorite = false;
+  bool isFavorite;
 
   // В корзине
-  bool inCart = false;
+  bool inCart;
 }
