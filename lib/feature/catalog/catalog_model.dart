@@ -11,9 +11,9 @@ class CatalogModel extends ElementaryModel {
 
     List<Product> data = <Product>[];
     if (category == CategoryExample.groceries) {
-      data = listProduct;
+      data = listProductExample;
     } else {
-      for (final Product product in listProduct) {
+      for (final Product product in listProductExample) {
         if (product.category == category) data.add(product);
       }
     }

@@ -2,7 +2,7 @@ import 'package:test_xpage/core/product.dart';
 import 'package:test_xpage/example_data/example_category.dart';
 
 /// Примеры товаров
-List<Product> listProduct = <Product>[
+List<Product> listProductExample = <Product>[
   // фрукты
   Product(
     name: 'Арбуз',

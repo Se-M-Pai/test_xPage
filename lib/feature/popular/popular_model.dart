@@ -19,7 +19,7 @@ class PopularModel extends ElementaryModel {
   }
 
   List<Product> initPopular() {
-    for (final Product product in listProduct) {
+    for (final Product product in listProductExample) {
       if (product.rate > 2) _popularProduct.add(product);
     }
     return _popularProduct;

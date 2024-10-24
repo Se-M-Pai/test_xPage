@@ -32,7 +32,7 @@ class PromoCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          log('Акция');
+          log(promo.name);
         },
         child: Column(
           children: <Widget>[
@@ -56,6 +56,7 @@ class PromoCard extends StatelessWidget {
                   const SizedBox(height: 16),
                   Text(
                     promo.description,
+                    overflow: TextOverflow.ellipsis,
                     style: AppTextStyle.black14l,
                   ),
                   const Spacer(),

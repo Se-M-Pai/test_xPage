@@ -1,14 +1,12 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:test_xpage/core/promo.dart';
 import 'package:test_xpage/core/theme/text_style.dart';
 import 'package:test_xpage/core/widgets/product_search.dart';
-import 'package:test_xpage/example_data/example_promo.dart';
 import 'package:test_xpage/feature/category/presentation/widget/category_widget.dart';
 import 'package:test_xpage/feature/delivery/delivery_widget.dart';
 import 'package:test_xpage/feature/popular/widget/popular_widget.dart';
-import 'package:test_xpage/feature/promo/widget/promo_card.dart';
+import 'package:test_xpage/feature/promo/widget/promo_widget.dart';
 
 /// Главный экран
 class HomeScreen extends StatelessWidget {
@@ -36,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                       style: AppTextStyle.title,
                     ),
                   ),
-                  PromoCard(promo: listPromo.first),
+                  const PromoWidget(),
 
                   // Популярное
                   ListTile(
