@@ -1,6 +1,7 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:test_xpage/core/global.dart';
 import 'package:test_xpage/example_data/example_category.dart';
 import 'package:test_xpage/feature/category/category_model.dart';
 import 'package:test_xpage/feature/category/presentation/widget/category_widget.dart';
@@ -50,6 +51,7 @@ class CategoryWM extends WidgetModel<CategoryWidget, CategoryModel> implements I
     _categoryController.value = newListCategory;
 
     _isLoadingController.value = false;
+    Global.isLoaded = true;
   }
 
   @override
@@ -63,7 +65,7 @@ class CategoryWM extends WidgetModel<CategoryWidget, CategoryModel> implements I
   void initWidgetModel() {
     super.initWidgetModel();
 
-    searchCategory();
+    if (!Global.isLoaded) searchCategory();
 
     _selectedCategoryController = ValueNotifier<CategoryExample>(model.selectedCategory);
     _categoryController = ValueNotifier<List<CategoryExample>>(model.listCategory);

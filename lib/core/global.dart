@@ -9,4 +9,7 @@ class Global{
 
   // выбранный режим доставки
   static DeliveryState selectedDeliveryState = DeliveryState.delivery;
+
+  // эффект подгрузки
+  static bool isLoaded = false;
 }

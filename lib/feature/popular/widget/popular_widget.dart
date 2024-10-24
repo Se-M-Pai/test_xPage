@@ -16,7 +16,17 @@ class PopularWidget extends ElementaryWidget<IPopularWM> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              ProductCard(product: popularProducts.first),
+              ValueListenableBuilder<bool>(
+                valueListenable: wm.isLoading,
+                builder: (final BuildContext context, final bool isLoading, final __) => isLoading ? Container(
+                  height: 270,
+                  width: (MediaQuery.of(context).size.width - 64) / 2,
+                  color: Color(0xFFF8F8F8),
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ) : ProductCard(product: popularProducts.first),
+              ),
               const PopularCardButton(),
             ],
           ),
