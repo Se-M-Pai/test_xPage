@@ -9,7 +9,7 @@ abstract interface class INavigationBarWM implements IWidgetModel {
   // Индекс экрана
   ValueListenable<int> get indexState;
 
-  // Экран
+  // Активный экран
   ValueListenable<Widget> get screenState;
 
   // Переключение экранов
@@ -24,10 +24,11 @@ class NavigationBarWM extends WidgetModel<NavigationWidget, NavigationModel> imp
   NavigationBarWM(super._model);
 
   final ValueNotifier<int> _indexController = ValueNotifier<int>(0);
-  late ValueNotifier<Widget> _screenController;
 
   @override
   ValueListenable<int> get indexState => _indexController;
+
+  late ValueNotifier<Widget> _screenController;
 
   @override
   ValueListenable<Widget> get screenState => _screenController;
@@ -42,7 +43,7 @@ class NavigationBarWM extends WidgetModel<NavigationWidget, NavigationModel> imp
   void initWidgetModel() {
     super.initWidgetModel();
 
-    _screenController = ValueNotifier<Widget>(model.listScreen.elementAt(indexState.value));
+    _screenController = ValueNotifier<Widget>(model.listScreen.first);
   }
 
   @override

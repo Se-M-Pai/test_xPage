@@ -12,6 +12,7 @@ class CatalogWidget extends ElementaryWidget<ICatalogWM> {
   const CatalogWidget({required this.categoryWM, super.key}) : super(catalogWMFactory);
 
   final CatalogCategoryWm categoryWM;
+
   @override
   Widget build(final ICatalogWM wm) => ValueListenableBuilder<CategoryExample>(
         valueListenable: categoryWM.selectedCategory,

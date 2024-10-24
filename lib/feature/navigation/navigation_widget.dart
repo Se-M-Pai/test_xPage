@@ -9,15 +9,12 @@ class NavigationWidget extends ElementaryWidget<INavigationBarWM> {
   const NavigationWidget({super.key}) : super(navigationBarWMFactory);
 
   @override
-  Widget build(final INavigationBarWM wm) => ValueListenableBuilder<int>(
-        valueListenable: wm.indexState,
-        builder: (final _, final int index, final __) => Scaffold(
+  Widget build(final INavigationBarWM wm) => ValueListenableBuilder<Widget>(
+        valueListenable: wm.screenState,
+        builder: (final _, final Widget screen, final __) => Scaffold(
           backgroundColor: Colors.white,
-          body: ValueListenableBuilder<Widget>(
-            valueListenable: wm.screenState,
-            builder: (final _, final Widget screen, final __) => SafeArea(
-              child: screen,
-            ),
+          body: SafeArea(
+            child: screen,
           ),
           bottomNavigationBar: BottomNavigationBar(
             items: <BottomNavigationBarItem>[
@@ -27,7 +24,7 @@ class NavigationWidget extends ElementaryWidget<INavigationBarWM> {
               _navigationItem('Избранное', AppIcons.favorite),
               _navigationItem('Магазины', AppIcons.shop),
             ],
-            currentIndex: index,
+            currentIndex: wm.indexState.value,
             unselectedLabelStyle: AppTextStyle.navigation,
             selectedLabelStyle: AppTextStyle.navigation,
             backgroundColor: Color(0xFFF8F8F8),
