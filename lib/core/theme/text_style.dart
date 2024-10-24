@@ -6,6 +6,8 @@ class AppTextStyle {
   static const TextStyle category = TextStyle(fontSize: 16, fontWeight: FontWeight.w600);
   static const TextStyle navigation = TextStyle(fontSize: 10, fontWeight: FontWeight.w600);
   static const TextStyle seeAll = TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Color(0xFFFF8B19));
+  static const TextStyle productName = TextStyle(fontSize: 16, fontWeight: FontWeight.w600);
+  static const TextStyle productNameS = TextStyle(fontSize: 12, fontWeight: FontWeight.w600);
   static const TextStyle price = TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Color(0xFFFF8B19));
   static const TextStyle discountPrice = TextStyle(
       fontSize: 12, fontWeight: FontWeight.w300, color: Color(0xFFD9D9D9), decoration: TextDecoration.lineThrough);

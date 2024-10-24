@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:elementary/elementary.dart';
 import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/foundation.dart';

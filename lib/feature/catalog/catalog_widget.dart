@@ -1,12 +1,10 @@
 import 'package:elementary/elementary.dart';
-import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:test_xpage/core/product.dart';
-import 'package:test_xpage/core/widgets/product_card.dart';
 import 'package:test_xpage/example_data/example_category.dart';
 import 'package:test_xpage/feature/catalog/catalog_wm.dart';
+import 'package:test_xpage/feature/catalog/widget/product_card.dart';
 import 'package:test_xpage/feature/category/presentation/catalog_category_wm.dart';
-import 'package:test_xpage/feature/category/presentation/widget/catalog_category_widget.dart';
 
 class CatalogWidget extends ElementaryWidget<ICatalogWM> {
   const CatalogWidget({required this.categoryWM, super.key}) : super(catalogWMFactory);

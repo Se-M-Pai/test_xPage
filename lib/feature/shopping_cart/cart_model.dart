@@ -6,7 +6,7 @@ import 'package:test_xpage/core/product.dart';
 // class CartModel extends ElementaryModel {
 //   CartModel();
 //
-//   List<Product>
+//   List<Product> productsInCart = <Product>[];
 //
 //   DeliveryState _deliveryState = DeliveryState.delivery;
 //   DeliveryState get deliveryState => _deliveryState;

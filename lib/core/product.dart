@@ -13,14 +13,30 @@ class Product {
     required this.image,
   });
 
-  String name; // Название
-  String units; // Единицы измерения
-  int price; // Цена
-  int discountedPrice; // Цена со скидкой
-  CategoryExample category; // Категория товара
-  int rate; // Рейтинг
-  String image; // Картинка
+  // Название
+  String name;
 
-  bool isFavorite = false; // В избранном
-  bool inCart = false; // В корзине
+  // Единицы измерения
+  String units;
+
+  // Цена
+  int price;
+
+  // Цена со скидкой
+  int discountedPrice;
+
+  // Категория товара
+  CategoryExample category;
+
+  // Рейтинг
+  int rate;
+
+  // Картинка
+  String image;
+
+  // В избранном
+  bool isFavorite = false;
+
+  // В корзине
+  bool inCart = false;
 }

@@ -6,8 +6,6 @@ import 'package:test_xpage/example_data/example_product.dart';
 class CatalogModel extends ElementaryModel {
   CatalogModel();
 
-  List<Product> list = listProduct;
-
   Future<List<Product>> loadCatalog(final CategoryExample category) async {
     await Future<void>.delayed(const Duration(milliseconds: 500));
 

@@ -78,7 +78,9 @@ class ProductCard extends StatelessWidget {
                   const SizedBox(height: 12),
                   Text(
                     product.name,
-                    style: AppTextStyle.category,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: product.name.length < 10 ? AppTextStyle.productName : AppTextStyle.productNameS,
                   ),
                   const SizedBox(height: 10),
                   Text(
