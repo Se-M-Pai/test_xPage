@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:test_xpage/core/theme/text_style.dart';
 import 'package:test_xpage/example_data/example_category.dart';

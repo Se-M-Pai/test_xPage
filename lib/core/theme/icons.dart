@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 /// Иконки из ассетов
 class AppIcons {
   // Иконки навигационной панели

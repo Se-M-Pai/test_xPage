@@ -14,15 +14,14 @@ List<Product> listProductExample = <Product>[
     image: 'assets/products/watermelon.png',
   ),
   Product(
-    name: 'Клубника',
-    units: 'руб/кг',
-    price: 1234,
-    discountedPrice: 1234,
-    category: CategoryExample.fruits,
-    rate: 3,
-    image: 'assets/products/strawberry.png',
-    isFavorite: true
-  ),
+      name: 'Клубника',
+      units: 'руб/кг',
+      price: 1234,
+      discountedPrice: 1234,
+      category: CategoryExample.fruits,
+      rate: 3,
+      image: 'assets/products/strawberry.png',
+      isFavorite: true),
   Product(
     name: 'Ананас',
     units: 'руб/кг',

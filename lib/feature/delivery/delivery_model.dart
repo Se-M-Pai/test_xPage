@@ -8,6 +8,7 @@ class DeliveryModel extends ElementaryModel {
   DeliveryModel();
 
   DeliveryState? _deliveryState;
+
   DeliveryState get deliveryState => _deliveryState ?? Global.selectedDeliveryState;
 
   EntityState<DeliveryState> change(final DeliveryState state) {

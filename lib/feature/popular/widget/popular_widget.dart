@@ -18,14 +18,16 @@ class PopularWidget extends ElementaryWidget<IPopularWM> {
             children: <Widget>[
               ValueListenableBuilder<bool>(
                 valueListenable: wm.isLoading,
-                builder: (final BuildContext context, final bool isLoading, final __) => isLoading ? Container(
-                  height: 270,
-                  width: (MediaQuery.of(context).size.width - 64) / 2,
-                  color: Color(0xFFF8F8F8),
-                  child: Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                ) : ProductCard(product: popularProducts.first),
+                builder: (final BuildContext context, final bool isLoading, final __) => isLoading
+                    ? Container(
+                        height: 270,
+                        width: (MediaQuery.of(context).size.width - 64) / 2,
+                        color: Color(0xFFF8F8F8),
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      )
+                    : ProductCard(product: popularProducts.first),
               ),
               const PopularCardButton(),
             ],

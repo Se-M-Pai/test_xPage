@@ -8,6 +8,7 @@ class PopularModel extends ElementaryModel {
   PopularModel();
 
   List<Product> _popularProduct = <Product>[];
+
   List<Product> get popularProduct => _popularProduct;
 
   Future<List<Product>> refreshPopularList() async {

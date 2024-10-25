@@ -8,6 +8,6 @@ class EmptyScreen extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) => Center(
-    child: Text(data),
-  );
+        child: Text(data),
+      );
 }

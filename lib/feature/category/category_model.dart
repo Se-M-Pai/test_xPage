@@ -8,9 +8,11 @@ class CategoryModel extends ElementaryModel {
   CategoryModel();
 
   CategoryExample? _selectedCategory;
+
   CategoryExample get selectedCategory => _selectedCategory ?? Global.selectedCategory;
 
   List<CategoryExample> _listCategory = CategoryExample.values;
+
   List<CategoryExample> get listCategory => _listCategory;
 
   Future<List<CategoryExample>> searchCategory() async {

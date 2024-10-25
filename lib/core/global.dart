@@ -1,7 +1,7 @@
 import 'package:test_xpage/example_data/example_category.dart';
 import 'package:test_xpage/feature/delivery/delivery_model.dart';
 
-class Global{
+class Global {
   Global._();
 
   // выбранная категория
