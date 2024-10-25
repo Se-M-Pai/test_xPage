@@ -8,7 +8,7 @@ import 'package:test_xpage/core/theme/icons.dart';
 import 'package:test_xpage/core/theme/text_style.dart';
 import 'package:test_xpage/feature/delivery/delivery_model.dart';
 import 'package:test_xpage/feature/delivery/delivery_wm.dart';
-import 'package:test_xpage/feature/shopping_cart/widget/total_amount.dart';
+import 'package:test_xpage/feature/shopping_cart/widget/cart_button_mini.dart';
 
 class DeliveryWidget extends ElementaryWidget<IDeliveryWM> {
   const DeliveryWidget({super.key}) : super(deliveryWMFactory);
@@ -96,9 +96,7 @@ class DeliveryWidget extends ElementaryWidget<IDeliveryWM> {
                             ),
                           )
                         : SizedBox(),
-                    TotalAmount(
-                      total: 38,
-                    ),
+                    const CartButtonMini(),
                   ],
                 ),
               ),

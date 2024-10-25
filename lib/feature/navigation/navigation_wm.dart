@@ -5,13 +5,13 @@ import 'package:test_xpage/feature/navigation/navigation_model.dart';
 import 'package:test_xpage/feature/navigation/navigation_widget.dart';
 
 abstract interface class INavigationBarWM implements IWidgetModel {
-  // Индекс экрана
+  /// Индекс экрана
   ValueListenable<int> get indexState;
 
-  // Активный экран
+  /// Активный экран
   ValueListenable<Widget> get screenState;
 
-  // Переключение экранов
+  /// Переключение экранов
   void switchScreen(final int index);
 }
 

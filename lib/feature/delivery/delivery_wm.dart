@@ -5,10 +5,10 @@ import 'package:test_xpage/feature/delivery/delivery_model.dart';
 import 'package:test_xpage/feature/delivery/delivery_widget.dart';
 
 abstract interface class IDeliveryWM implements IWidgetModel {
-  // Режим доставка/самовывоз
+  /// Режим доставка/самовывоз
   EntityValueListenable<DeliveryState> get deliveryState;
 
-  // Переключение режима доставки
+  /// Переключение режима доставки
   void change(final DeliveryState state);
 }
 

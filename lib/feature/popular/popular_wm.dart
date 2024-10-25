@@ -7,13 +7,13 @@ import 'package:test_xpage/feature/popular/popular_model.dart';
 import 'package:test_xpage/feature/popular/widget/popular_widget.dart';
 
 abstract interface class IPopularWM implements IWidgetModel {
-  // Список популярных продуктов
+  /// Список популярных продуктов
   ValueListenable<List<Product>> get popularProducts;
 
-  // Процесс загрузки
+  /// Процесс загрузки
   ValueListenable<bool> get isLoading;
 
-  // Обновление списка популярных
+  /// Обновление списка популярных
   Future<void> refreshPopular();
 }
 

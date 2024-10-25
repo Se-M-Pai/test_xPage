@@ -6,7 +6,7 @@ import 'package:test_xpage/feature/promo/promo_model.dart';
 import 'package:test_xpage/feature/promo/widget/promo_widget.dart';
 
 abstract interface class IPromoWM implements IWidgetModel {
-  // Список акций
+  /// Список акций
   ValueListenable<List<Promo>> get listPromo;
 }
 

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_xpage/core/product.dart';
 import 'package:test_xpage/core/theme/icons.dart';
 import 'package:test_xpage/core/theme/text_style.dart';
+import 'package:test_xpage/feature/catalog/widget/cart_button_on_card.dart';
 
 /// Настраиваемый виджет карточки для отображения информации о продукте
 
@@ -80,6 +81,8 @@ class ProductCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 const SizedBox(height: 12),
+
+                // Название товара
                 Text(
                   product.name,
                   maxLines: 2,
@@ -87,30 +90,24 @@ class ProductCard extends StatelessWidget {
                   style: product.name.length < 10 ? AppTextStyle.productName : AppTextStyle.productNameS,
                 ),
                 const SizedBox(height: 10),
+
+                // Цена со скидкой
                 Text(
-                  '${product.price} ${product.units}',
+                  '${product.discountedPrice} ${product.units}',
                   style: AppTextStyle.price,
                 ),
                 const SizedBox(height: 4),
+
+                // Цена без скидки
                 if (product.discountedPrice != product.price)
                   Text(
-                    '${product.discountedPrice} ${product.units}',
+                    '${product.price} ${product.units}',
                     style: AppTextStyle.discountPrice,
                   ),
                 const Spacer(),
-                SizedBox(
-                  height: 36,
-                  child: FilledButton(
-                    onPressed: () {},
-                    style: ButtonStyle(backgroundColor: WidgetStateProperty.all<Color>(Color(0xFFFF8B19))),
-                    child: SvgPicture.asset(
-                      AppIcons.cart,
-                      width: 24,
-                      height: 20,
-                      colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                    ),
-                  ),
-                ),
+
+                // Кнопка в корзину
+                CartButtonOnCard(product: product),
                 const SizedBox(height: 22),
               ],
             ),

@@ -7,19 +7,19 @@ import 'package:test_xpage/feature/category/category_model.dart';
 import 'package:test_xpage/feature/category/presentation/widget/category_widget.dart';
 
 abstract interface class ICategoryWM implements IWidgetModel {
-  // Выбранная категория
+  /// Выбранная категория
   ValueListenable<CategoryExample> get selectedCategory;
 
-  // Список категорий
+  /// Список категорий
   ValueListenable<List<CategoryExample>> get categoryState;
 
-  // Процесс загрузки
+  /// Процесс загрузки
   ValueListenable<bool> get isLoading;
 
-  // Загрузка категорий из базы
+  /// Загрузка категорий из базы
   Future<void> searchCategory();
 
-  // Клик по категории
+  /// Клик по категории
   Future<void> onTap(final CategoryExample category);
 }
 

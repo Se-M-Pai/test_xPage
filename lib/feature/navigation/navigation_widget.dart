@@ -40,7 +40,6 @@ class NavigationWidget extends ElementaryWidget<INavigationBarWM> {
                   ),
 
                   // Кнопка перехода в корзину
-                  // FixMe добавить проверку на наличие товаров в корзине
                   if (index == 0) const CartButton(),
                 ],
               ),

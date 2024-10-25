@@ -9,13 +9,13 @@ import 'package:test_xpage/feature/catalog/catalog_model.dart';
 import 'package:test_xpage/feature/catalog/widget/catalog_widget.dart';
 
 abstract interface class ICatalogWM implements IWidgetModel {
-  // Выбранная категория
+  /// Выбранная категория
   ListenableState<CategoryExample> get selectedCategory;
 
-  // Список товаров
+  /// Список товаров
   ValueListenable<List<Product>> get listProduct;
 
-  // Загрузка каталога
+  /// Загрузка каталога
   Future<void> loadCatalog(final CategoryExample category);
 }
 
