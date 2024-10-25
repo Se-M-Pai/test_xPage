@@ -1,6 +1,7 @@
 import 'package:elementary/elementary.dart';
 import 'package:elementary_helper/elementary_helper.dart';
 import 'package:test_xpage/core/product.dart';
+import 'package:test_xpage/example_data/example_cart.dart';
 
 class CartModel {
   CartModel({
@@ -20,5 +21,5 @@ class CartModel {
 class CartScreenModel extends ElementaryModel {
   CartScreenModel() : super();
 
-  final EntityStateNotifier<CartModel> cartState = EntityStateNotifier<CartModel>()..loading(CartModel.empty());
+  final EntityStateNotifier<CartModel> cartState = EntityStateNotifier<CartModel>()..loading(exampleCart);
 }

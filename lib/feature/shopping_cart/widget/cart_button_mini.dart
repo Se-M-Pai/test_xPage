@@ -20,7 +20,7 @@ class CartButtonMini extends ElementaryWidget<CartScreenWM> {
         builder: (final _, final CartModel? cart) => FilledButton.icon(
           onPressed: () {
             // ToDo переход в корзину
-            log('Переход в корзину');
+            log('Переход в корзину\n${cart?.totalPrice ?? 0}');
           },
           style: ButtonStyle(
             padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 13)),

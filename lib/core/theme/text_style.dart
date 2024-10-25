@@ -12,7 +12,11 @@ class AppTextStyle {
   static const TextStyle inCart = TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFFFFFFFF));
   static const TextStyle sumCart = TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xFFFFFFFF));
   static const TextStyle discountPrice = TextStyle(
-      fontSize: 12, fontWeight: FontWeight.w300, color: Color(0xFFD9D9D9), decoration: TextDecoration.lineThrough);
+    fontSize: 12,
+    fontWeight: FontWeight.w300,
+    color: Color(0xFFD9D9D9),
+    decoration: TextDecoration.lineThrough,
+  );
 
   static const TextStyle white14 = TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xFFFFFFFF));
   static const TextStyle white14l = TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Color(0xFFFFFFFF));

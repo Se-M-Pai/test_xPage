@@ -1,5 +1,6 @@
 import 'package:elementary_helper/elementary_helper.dart';
 import 'package:test_xpage/core/product.dart';
+import 'package:test_xpage/example_data/example_cart.dart';
 import 'package:test_xpage/feature/shopping_cart/data/cart_model.dart';
 
 /// Состояние корзины и управление ей
@@ -7,7 +8,7 @@ class CartState {
   CartState();
 
   /// Состояние корзины
-  final StateNotifier<CartModel> _cartState = StateNotifier<CartModel>(initValue: CartModel.empty());
+  final StateNotifier<CartModel> _cartState = StateNotifier<CartModel>(initValue: exampleCart);
 
   ListenableState<CartModel> get cartListenable => _cartState;
 

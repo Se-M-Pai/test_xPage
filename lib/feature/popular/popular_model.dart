@@ -7,7 +7,7 @@ import 'package:test_xpage/example_data/example_product.dart';
 class PopularModel extends ElementaryModel {
   PopularModel();
 
-  List<Product> _popularProduct = <Product>[];
+  final List<Product> _popularProduct = <Product>[];
 
   List<Product> get popularProduct => _popularProduct;
 
