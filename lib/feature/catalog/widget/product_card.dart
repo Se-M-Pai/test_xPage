@@ -23,8 +23,8 @@ class ProductCard extends StatelessWidget {
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: Colors.grey.withOpacity(0.15),
-            spreadRadius: 1,
-            blurRadius: 5,
+            spreadRadius: 5,
+            blurRadius: 10,
           ),
         ],
       ),

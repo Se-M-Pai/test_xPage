@@ -1,9 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_xpage/core/promo.dart';
-import 'package:test_xpage/core/theme/icons.dart';
 import 'package:test_xpage/core/theme/text_style.dart';
 
 /// Настраиваемый виджет карточки для отображения информации о продукте
@@ -25,8 +23,8 @@ class PromoCard extends StatelessWidget {
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: Colors.grey.withOpacity(0.15),
-            spreadRadius: 1,
-            blurRadius: 5,
+            spreadRadius: 5,
+            blurRadius: 10,
           ),
         ],
       ),
