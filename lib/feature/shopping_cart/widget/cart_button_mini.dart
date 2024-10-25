@@ -8,7 +8,6 @@ import 'package:test_xpage/core/theme/icons.dart';
 import 'package:test_xpage/core/theme/text_style.dart';
 import 'package:test_xpage/feature/shopping_cart/cart_wm.dart';
 import 'package:test_xpage/feature/shopping_cart/data/cart_model.dart';
-import 'package:test_xpage/feature/shopping_cart/data/cart_state.dart';
 
 /// Кнопка перехода в корзину с отображением общей суммы
 
